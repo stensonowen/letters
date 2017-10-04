@@ -17,15 +17,20 @@
     </head>
 
 
-    <div style="margin: auto; width: 50%; ">
-        <h1 style="text-align: center; "> "I can't quite tell what this glyph is" as a Service</h1>
-        <h2 style="text-align: center; "> Can't see the difference between an uppercase 'i', a baby 'L', and a one? </h2>
-        <input type="text" id="here" style="width: 100%; text-align: center; margin: 50; font-size: 36px;" autofocus/>
+    <body style="text-align: center">
+        <div style="margin: auto; width: 50%; ">
+            <h1> Big 'i', baby 'L', or one? </h1>
+            <h1> "What's this character" as a Service</h1>
+            <h4> api coming soon</h4>
+            <input type="text" id="here" style="width: 100%; text-align: center; font-size: 36px;" autofocus/>
 
-        <h1 id="result" class="big"><br></h1>
-    </div>
+            <h1 id="result" class="big"><br></h1>
+        </div>
+    </body>
 
-    <footer style="text-align: center;"> like <a href="https://xkcd.com/1105/" > https://xkcd.com/1105/ </a> or something </footer>
+    <footer style="text-align: center;"> 
+        <a href="https://xkcd.com/1105/" > https://xkcd.com/1105/ </a> or something 
+    </footer>
 
 </html>
 
@@ -36,11 +41,13 @@
     -moz-box-sizing: content-box;
     box-sizing: content-box;
     border: none;
-    font: normal 100px/1 "Comic Sans MS", cursive, sans-serif;
+    font: normal 60px/1 "Comic Sans MS", cursive, sans-serif;
     color: black;
-    text-align: center;
     -o-text-overflow: ellipsis;
     text-overflow: ellipsis;
+}
+.body {
+    text-align: center;
 }
 </style>
 
@@ -49,14 +56,8 @@ $('#here').on('input', function() {
     var input = $(this).val().slice(-1);
     $(this).val(input);
     var output = "";
-    if (input.toLowerCase() === "i") {
-        output = "eye";
-    } else if (input.toUpperCase() === "L") {
-        output = "ell";
-    } else if (input === "1") {
-        output = "one";
-    } else {
-        output = "unknown"; 
+    if (input.toLowerCase() === "i" || input.toUpperCase() === "L" || input === "1") {
+        output = "like as in THE ORDINAL"
     }
     $('#result').text(output);
 });
