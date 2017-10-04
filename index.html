@@ -1,1 +1,59 @@
-foo
+<!--
+    foo
+    decimal
+    ordinal / cardinal
+    folio
+    digit | 
+-->
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title> Il1 </title>
+        <script src="jquery.min.js"></script>
+    </head>
+
+
+    <div style="margin: auto; width: 50%; ">
+        <input type="text" id="here" style="width: 100%; text-align: center; margin: 50; font-size: 36px;" autofocus/>
+
+        <h1 id="result" class="big"><br></h1>
+    </div>
+
+</html>
+
+
+<style>
+.big {
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    border: none;
+    font: normal 100px/1 "Comic Sans MS", cursive, sans-serif;
+    color: black;
+    text-align: center;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+}
+</style>
+
+<script>
+$('#here').on('input', function() {
+    var input = $(this).val().slice(-1);
+    $(this).val(input);
+    var output = "";
+    if (input.toLowerCase() === "i") {
+        output = "eye";
+    } else if (input.toUpperCase() === "L") {
+        output = "ell";
+    } else if (input === "1") {
+        output = "one";
+    } else {
+        output = "Unknown"; 
+    }
+    $('#result').text(output);
+});
+</script>
